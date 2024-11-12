@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/homeScreen.css">
+
+</head>
+
+<body>
+    <div class="body">
+        <div class="main-bg">
+            <div class="grid-1">
+                <img src="/images/logo.png" alt="logo" width="100" height="100" class="logo">
+                <h1>
+                    COVID - 19 <br>
+                    Screening Tool
+                </h1>
+                <p>
+                    Use this self-assessment tool to help <br>
+                    determine whether you need to be tested for COVID-19.<br><br>
+                    You can complete this assessment for <br>yourself or on behalf of someone else, if <br> they are not
+                    able.
+                </p>
+            </div>
+            <div class="grid-2">
+                <img src="/images/covid19screen.png" alt="logo" width="180" height="400" class="main-img">
+            </div>
+        </div>
+
+        <div class="btn" onclick="openScreeningPopup()">
+            <div class="sub-grid"></div>
+            <div type="button" class="btn-grid">Start Screening</div>
+        </div>
+    </div>
+
+    <div id="screeningPopup" class="Popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeScreeningPopup()">&times;</span>
+            <h2>Do you have symptoms?</h2>
+            <img src="/images/question.png" alt="question">
+            <div class="modal-buttons">
+                <button class="modal-button" onclick="answerQuestion(true)">Yes, I do</button>
+                <button class="modal-button" onclick="answerQuestion(false)">No, I don't</button>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="center-container">
+        <div class="more-info">
+            <h1>More Information</h1>
+            <div class="info-card" onclick="openPopup('popup1')">
+                <img src="/images/virus.png" alt="virus icon" width="50" height="50">
+                <div class="info-text">
+                    <h2>What is COVID-19?</h2>
+                    <p>Coronavirus disease (COVID-19) is an infectious disease...</p>
+                </div>
+                <span><img src="/images/icon-arrow.png" alt="more" width="50" height="50"></span>
+            </div>
+
+            <div class="info-card" onclick="openPopup('popup2')">
+                <img src="/images/symptoms.png" alt="symptoms icon" width="50" height="50">
+                <div class="info-text">
+                    <h2>What are its Symptoms</h2>
+                    <p>The COVID-19 virus affects different people in different ways...</p>
+                </div>
+                <span><img src="/images/icon-arrow.png" alt="more" width="50" height="50"></span>
+            </div>
+
+            <div class="info-card" onclick="openPopup('popup3')">
+                <img src="/images/prevent.png" alt="prevention icon" width="50" height="50">
+                <div class="info-text">
+                    <h2>How can you prevent it?</h2>
+                    <p>There's currently no vaccine to prevent coronavirus disease...</p>
+                </div>
+                <span><img src="/images/icon-arrow.png" alt="more" width="50" height="50"></span>
+            </div>
+        </div>
+
+
+        <div id="popup1" class="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup('popup1')">&times;</span>
+                <div class="content">
+                    <h2 class="pop-up-h1">COVID-19</h2>
+                    <p>Coronavirus disease (COVID-19) is an infectious disease caused by a new virus.
+                        The disease causes respiratory illness (like the flu) with symptoms such as a
+                        cough, fever, and in more severe cases, difficulty breathing. You can protect yourself
+                        by washing your hands frequently, avoiding touching your face, and avoiding close contact
+                        (1 meter or 3 feet) with people who are unwell.</p>
+                    <h3>
+                        How it spreads?
+                    </h3>
+                    <p>
+                        Coronavirus disease spreads primarily through contact with an infected person when
+                        they cough or sneeze. It also spreads when a person touches a surface or object that
+                        has the virus on it, then touches their eyes, nose, or mouth.
+                        Learn more on who.int →
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="popup2" class="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup('popup2')">&times;</span>
+                <div class="content">
+                    <h2 class="pop-up-h1">Symptoms</h2>
+                    <p>The COVID-19 virus affects different people in different ways. COVID-19 is a respiratory
+                        disease and most infected people will develop mild to moderate symptoms and recover without
+                        requiring special treatment. People who have underlying medical conditions and those over
+                        60 years old have a higher risk of developing severe disease and death.</p>
+                    <h3>
+                        Common symptoms include:
+                    </h3>
+                    <p>
+                        Coronavirus disease spreads primarily through contact with an infected person when
+                        they cough or sneeze. It also spreads when a person touches a surface or object that
+                        has the virus on it, then touches their eyes, nose, or mouth.
+                        Learn more on who.int →
+                    </p>
+                    <div class="image-text-row">
+                        <img src="/images/fever.png" height="100px" width="100px">
+                        <p class="text">Fever and body aches</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/drycough.png" height="100px" width="100px">
+                        <p class="text">Dry Cough</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/tirdeness.png" height="100px" width="100px">
+                        <p class="text">Tirdeness</p>
+                    </div>
+                    <h3>
+                        Other symptoms include:
+                    </h3>
+                    <div class="image-text-row">
+                        <img src="/images/8.png" height="100px" width="100px">
+                        <p class="text">Pains and aches</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/thorat.png" height="100px" width="100px">
+                        <p class="text">Sore throat</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/breath.png" height="100px" width="100px">
+                        <p class="text">Shortness of breath</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/lungs.png" height="100px" width="100px">
+                        <p class="text">Very few people will report diarrhoea, nausea or a runny nose.</p>
+                    </div>
+                    <p>
+                        People with mild symptoms who are otherwise healthy should self-isolate and contact
+                        their medical provider or a COVID-19 information line for advice on testing and referral.
+                        People with fever, cough or difficulty breathing should call their doctor and seek medical
+                        attention.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="popup3" class="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup('popup3')">&times;</span>
+                <div class="content">
+                    <h2 class="pop-up-h1">Prevention</h2>
+                    <p>There's currently no vaccine to prevent coronavirus disease (COVID-19). You can protect yourself
+                        and help prevent spreading the virus to others if you do the following:</p>
+
+                    <div class="image-text-row">
+                        <img src="/images/hands.png" height="100px" width="100px">
+                        <p class="text">Wash your hands regularly with soap and water, or clean them with alcohol-based
+                            hand rub.</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/distance.png" height="100px" width="100px">
+                        <p class="text">Maintain at least 1 metre distance between you and people coughing or sneezing.
+                        </p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/away.png" height="100px" width="100px">
+                        <p class="text">To help prevent infections, keep your hands away from your eyes, nose, and
+                            mouth.</p>
+                    </div>
+
+                    <div class="image-text-row">
+                        <img src="/images/cover.png" height="100px" width="100px">
+                        <p class="text">Cover your mouth and nose when coughing or sneezing.</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/home.png" height="100px" width="100px">
+                        <p class="text">Cover your mouth and nose when coughing or sneezing.</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/lungs.png" height="100px" width="100px">
+                        <p class="text">
+                            Refrain from smoking and other activities that weaken the lungs.</p>
+                    </div>
+                    <div class="image-text-row">
+                        <img src="/images/physica.png" height="100px" width="100px">
+                        <p class="text">Practice physical distancing by avoiding unnecessary travel and staying away
+                            from large groups of people.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/js/homeScreen.js"></script>
+
+</body>
+
+</html>
