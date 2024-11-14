@@ -1,9 +1,13 @@
 function openPopup(popupId) {
+    const openPopups = document.querySelectorAll('.popup');  //updated
+    openPopups.forEach(popup => {
+        popup.style.display = 'none';
+    });
+
     const popup = document.getElementById(popupId);
-    if (popup) {
-        popup.style.display = 'block';
-    }
+    popup.style.display = 'block';
 }
+
 
 function closePopup(popupId) {
     const popup = document.getElementById(popupId);
@@ -15,11 +19,17 @@ function closePopup(popupId) {
 let answers = {};
 
 function openScreeningPopup() {
+    nextQuestion(1);   //updated
     document.getElementById("screeningPopup").style.display = "flex";
     nextQuestion(1);
 }
 
 function closeScreeningPopup() {
+    document.getElementById("screeningPopup").style.display = "none";
+}
+
+function closeResultPopup() {  //updated
+    document.getElementById("resultPopup").style.display = "none";
     document.getElementById("screeningPopup").style.display = "none";
 }
 
@@ -100,6 +110,8 @@ function displayResult() {
 
     if (result1) {
         resultText = `
+        <div id='resultPopup'>
+            <span class="close" onclick="closeResultPopup()">&times;</span> 
             <h1>Result 1: High Probability of Corona!</h1>
             <ol>
                 <li>Isolate From Others</li>
@@ -110,9 +122,12 @@ function displayResult() {
                 <li>Follow Govt Instructions</li>
             </0l>
             <p>As of now, your answers suggest that you may need testing. If anything changes, take the questionnaire again.</p>
+        </div>
         `;
     } else if (result2) {
         resultText = `
+            <div id='resultPopup'>
+            <span class="close" onclick="closeResultPopup()">&times;</span>
             <h1>Result 2: Suspected for Corona!</h1>
              <ol>
             <li>Isolate From Others</li>
@@ -123,9 +138,13 @@ function displayResult() {
             <li>Follow Govt Instructions</li>
             </ol>
             <p>As of now, your answers suggest that you may need testing. If anything changes, take the questionnaire again.</p>
+            </div>
+
         `;
     } else {
         resultText = `
+            <div id='resultPopup'>
+            <span class="close" onclick="closeResultPopup()">&times;</span>
             <h1>Result 3: You are all Good!</h1>
             <ol>
             <li>No Test Needed At This Time</li>
@@ -133,6 +152,8 @@ function displayResult() {
             <li>Avoid groups of people and keep six feet apart from anyone who’s not part of the household. Especially avoid those showing symptoms.</li>
             </ol>
             <p>As of now, their answers suggest they do not need to get tested. If anything changes, take the questionnaire again.</p>
+            </div>
+
         `;
     }
 
